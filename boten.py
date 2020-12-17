@@ -104,7 +104,7 @@ async def help(ctx):
 
 async def hello(ctx):
 	author = ctx.message.author
-	await ctx.send(f'Hello {author.mention}, I am PurpleBot UwU')
+	await ctx.send(f'Hello {author.mention}, I am open source PurpleBot UwU')
 
 ##########KICK####################################################
 
