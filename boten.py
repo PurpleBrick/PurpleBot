@@ -27,65 +27,7 @@ async def on_member_join(member):
 	await member.add_roles( role )
 
 
-##########RULES###################################################
-"""
-@client.command(aliases = ['rules'])
-async def __rules(ctx):
-	embed1 = discord.Embed(title = 'Правила общения',
-		description = '1.1 Не матерись')
-	embed2 = discord.Embed(title = 'Правила общения',
-		description = '1.2 Уважай других')
-	embed3 = discord.Embed(title = 'Правила общения',
-		description = '1.3 Не оскорбляй администрацию')
-	embed4 = discord.Embed(title = 'Правила общения',
-		description = '1.4')
-	embed5 = discord.Embed(title = 'Страница 1',
-		description = '1.1 Не матерись')
-	embed6 = discord.Embed(title = 'Страница 2',
-		description = 'Описание 2')
-	embed7 = discord.Embed(title = 'Страница 3',
-		description = 'Описание 3')
-	embed8 = discord.Embed(title = 'Страница 4',
-		description = 'Описание 4')
-	embed9 = discord.Embed(title = 'Страница 1',
-		description = '1.1 Не матерись')
-	embed10 = discord.Embed(title = 'Страница 2',
-		description = 'Описание 2')
-	embed11 = discord.Embed(title = 'Страница 3',
-		description = 'Описание 3')
-	embed12 = discord.Embed(title = 'Страница 4',
-		description = 'Описание 4')
-	embeds = [embed1, embed2, embed3, embed4]
-	message = await ctx.send(embed = embed1)
-	page = pag(client, message, only=ctx.author, use_more=False, embeds = embeds, footer = False)
-	await page.start()
-"""
-##########JOIN####################################################
-"""
-@client.command()
-async def join(ctx):
-	global voice
-	channel = ctx.message.author.voice.channel
-	voice = get(client.voice_clients, guild = ctx.guild)
 
-	if voice and voice.is_connected():
-		await voice.move_to(channel)
-	else:
-		voice = await channel.connect()
-		await ctx.send(f'Бот присоединился к каналу: {channel}')
-
-@client.command()
-async def leave(ctx):
-	channel = ctx.message.author.voice.channel
-	voice = get(client.voice_clients, guild = ctx.guild)
-
-	if voice.is_connected():
-		await voice.disconnect()
-	else:
-		voice = await channel.connect()
-		await ctx.send(f'Бот отсоединился от канала: {channel}')
-
-"""
 ##########MUTE####################################################
 @client.command(pass_context = True)
 @commands.has_permissions(administrator = True)
